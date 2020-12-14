@@ -149,34 +149,37 @@ git pull - выкачать последние изменения*/
 
 //*********************************************** 7 практика
 
-let numbersOfFilms;
+/*let numbersOfFilms;
 
-numbersOfFilms = prompt('Сколько фильмов уже посмотрели','');
+numbersOfFilms = prompt('Сколько фильмов уже посмотрели', '');
 
 let personalMovieDB = {
     count: numbersOfFilms,
     movies: {},
     actors: {},
-    genders: [],
+    genres: [],
     privat: false
 };
 
 //user["likes birds"] = true;
 
-let answ11 = prompt('Один из последних фильмов:','');
-let answ12 = prompt('Оценка:','');
-let answ13 = prompt('Один из последних фильмов:','');
-let answ14 = prompt('Оценка:','');
+let answ1 = prompt('Один из последних фильмов:', ''),
+    answ2 = prompt('Оценка:', ''),
+    answ3 = prompt('Один из последних фильмов:', ''),
+    answ4 = prompt('Оценка:', '');
 
-personalMovieDB={
-    movies: {answ11: answ12,answ13: answ14}    // запись объектов
+    personalMovieDB={
+    movies: {answ1: answ2,answ3: answ4}    // запись объектов
 };
 
-personalMovieDB['movies'][answ11]=answ12;
-personalMovieDB['movies'][answ13]=answ14;
+personalMovieDB['movies'][answ1]=answ2;      // запись объектов 2
+personalMovieDB['movies'][answ3]=answ4;
 
+
+personalMovieDB.movies[answ1] = answ2;       // запись объектов 3
+personalMovieDB.movies[answ3] = answ4;
 console.log(personalMovieDB);
-
+*/
 
 
 
