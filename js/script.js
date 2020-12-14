@@ -2,50 +2,50 @@
 
 //*********************************************** 1 Переменные
 
-var name = 'first_name'; // устарело
+//var name = 'first_name'; // устарело
 
-const lastName = 'last'; // нельзя менять
-let age = 26;        // можно менять
-const isBulean = true;
+//const lastName = 'last'; // нельзя менять
+//let age = 26;        // можно менять
+//const isBulean = true;
 //const if = 'err'// err зарезервированное слово
-const withNum5 = '5';
+//const withNum5 = '5';
 //const 5withNum = '5' // err имя начинается с цифры
 
 /*console.log(name)*/
 
-const obj = {
-    a: 50
-};
+//const obj = {
+//a: 50
+//};
 
-obj.a = 10; // смена значения константы
+//obj.a = 10; // смена значения константы
 
-{
-    let a = 10;   // видны только внутри скобок
-    const b = 20;
-}
+//{
+//let a = 10;   // видны только внутри скобок
+//const b = 20;
+//}
 
 //console.log('Тут ласт: ' + lastName + ', а тут число: ' + age);
-let num = 4.6; // дроби через точку
-let infinity = (4 / 0);
+//let num = 4.6; // дроби через точку
+//let infinity = (4 / 0);
 //console.log(infinity); // при делении на 0
 
-const bool = true;
+//const bool = true;
 
 //console.log(cc); // null - несуществует
 
-let und;
+//let und;
 //console.log(und); // undefined - переменная существует, но не определена.
 
-const objNew = {
-    name: 'Leonid',
-    age: 25,
-    isMarried: false // объект
-};
+//const objNew = {
+//name: 'Leonid',
+//age: 25,
+//isMarried: false // объект
+//};
 
 //console.log(objNew.name);
 //console.log(objNew['age']);
 
-let arr = ['first', 'second', 'first'] // миссив это частный случай объекта
+//let arr = ['first', 'second', 'first'] // миссив это частный случай объекта
 
 //*********************************************** 2 Общение с юзером
 
@@ -75,12 +75,12 @@ let arr = ['first', 'second', 'first'] // миссив это частный с�
 
 //*********************************************** 3 Интерполяция
 
-const category = 'toys';
+//const category = 'toys';
 //console.log('htpps://next.html/' + category + '/' + '4');
 
 //console.log(`htpps://next.html/${category}/5`); // контогинация через бэктики `
 
-const user = 'Ivan';
+//const user = 'Ivan';
 
 //alert (`Привет ${user}`); // контогинация через бэктики `
 
@@ -93,8 +93,8 @@ const user = 'Ivan';
 //console.log(4 + + '5');           // number
 //console.log(4 + '5');             // string
 
-let incr = 10,
-    decr = 10;
+//let incr = 10,
+//decr = 10;
 
 //incr++; // постфикс сначала возвращает старое значение, после увеличивет
 // ++incr; // префикс сначала увеличивает, потом возвращает
@@ -122,6 +122,41 @@ console.log(!isChecked || isFalse); // false
 
 
 //*********************************************** 6 git
+
+//git commit -a -m"add script file"
+//git push
+//git how to
+
+//*********************************************** 7 практика
+
+let numbersOfFilms;
+
+numbersOfFilms = prompt('Сколько фильмов уже посмотрели','');
+
+let personalMovieDB = {
+    count: numbersOfFilms,
+    movies: {},
+    actors: {},
+    genders: [],
+    privat: false
+};
+
+//user["likes birds"] = true;
+
+let answ11 = prompt('Один из последних фильмов:','');
+let answ12 = prompt('Оценка:','');
+let answ13 = prompt('Один из последних фильмов:','');
+let answ14 = prompt('Оценка:','');
+
+personalMovieDB={
+    movies: {answ11: answ12,answ13: answ14}    // запись объектов
+};
+
+personalMovieDB['movies'][answ11]=answ12;
+personalMovieDB['movies'][answ13]=answ14;
+
+console.log(personalMovieDB);
+
 
 
 
