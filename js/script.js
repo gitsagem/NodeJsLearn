@@ -123,6 +123,26 @@ console.log(!isChecked || isFalse); // false
 
 //*********************************************** 6 git
 
+/*dir - обзор папок
+cd <folder> - переходи в папку
+cd .. - на уровень выше
+git status - статус
+git add <file> - добавить файл
+git add <.folder> - добавить папку
+git restore <file> - удалить файл
+git commit -m "<message>" - создать коммит
+git branch - увидеть ветку
+git branch <branch> - создать ветку
+git branch -D <branch> - удалить ветку
+git checkout <branch> - переход на ветку
+git checkout -b <branch> - создать ветку и перейти на неё
+git merge <branch> - слияние с другой веткой
+git push - залить
+mkdir <folder> - создать папку
+git clone <code> - выкачать из сети в первый раз
+git pull - выкачать последние изменения*/
+
+
 //git commit -a -m"add script file"
 //git push
 //git how to
