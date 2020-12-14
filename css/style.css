@@ -1,0 +1,11 @@
+.menu {
+    display: flex;
+    /*justify-content: space-around;*/
+    list-style: none;
+    padding: 16px 54px 15px 32px;
+}
+
+.menu_link {
+    text-decoration: none;
+    color: #1e90ff;
+}
