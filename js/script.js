@@ -182,7 +182,303 @@ console.log(personalMovieDB);
 */
 
 
+//*********************************************** 013 УСЛОВИЯ
+
+/*if (4 == 9) {
+    console.log('OK!');
+} else {
+    console.log('Not OK!');
+}*/
+
+//const num = 100;
+
+/*if (num < 49) {
+    console.log('Error!');
+} else if (num > 100) {
+    console.log('To Much');
+} else {
+    console.log('Ok!');
+}*/
+
+// (num === 50) ? console.log('Ok!') : console.log('Error!'); // тернарный оператор
+
+/*
+4 + 4 // бинарный аргумент
++'4' // унарный аргумент
 
 
+switch (num) {
+    case 49:
+        console.log('Сорок девять');
+        break;
+    case 100:
+        console.log('Cto');
+        break;
+    case 50:
+        console.log('pyatdes');
+        break;
+    default:
+        console.log('Error');
+        break;
+}
+*/
+
+//*********************************************** 014 ЦИКЛЫ
+/*
+let num = 50;
+
+while (num <= 55) {
+    console.log(num);
+    num++;
+}
+
+do {
+    console.log(num);
+    num++;
+}
+while (num < 55);
 
 
+for (let i = 1; i < 8; i++) {
+    console.log(num);
+    num++;
+}
+
+
+for (let i = 1; i < 10; i++) {
+    if (i===6) {
+        //break;  // прерывание
+        continue; // пропуск
+    }
+
+    console.log(i);
+}
+*/
+
+//*********************************************** 015 ПРАКТИКА
+
+/*
+let numbersOfFilms;
+
+let personalMovieDB = {
+    count: numbersOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+*/
+//user["likes birds"] = true;
+/*
+do {
+    answ1 = prompt('Один из последних фильмов:', '');
+    answ2 = prompt('Оценка:', '');
+} while (answ1 == '' || answ2 == '' || answ1.length > 50);
+*/
+
+/*
+for (let i = 0; i < 2; i++) {
+
+    let answ1 = prompt('Один из последних фильмов:', ''),
+    answ2 = prompt('Оценка:', '');
+    if (answ1 != null && answ2 != null && answ1 != '' && answ1.length < 50) {       // вариант 1
+        personalMovieDB.movies[answ1] = answ2;
+    } else {
+        i--;
+    }
+}
+//personalMovieDB.movies[answ1] = answ2;       // запись объектов 3
+
+console.log(personalMovieDB);
+
+numbersOfFilms = +prompt('Сколько фильмов уже посмотрели', '');
+
+if (numbersOfFilms > 0 && numbersOfFilms < 10) {
+    console.log('Мало');
+} else if (numbersOfFilms >= 10 && numbersOfFilms < 30) {
+    console.log('Средне');
+} else {
+    console.log('Много');
+}
+
+
+let answ1 = '',
+    answ2 = '',
+    answ3 = '',
+    answ4 = '';
+
+while (answ1 == '' || answ2 == '' || answ1 > 50 || answ1 == null) {     // вариант 2
+    answ1 = prompt('Какой фильм', 'first')
+    answ2 = prompt('Оценка', '5')
+}
+
+while (answ3 == '' || answ4 == '' || answ3 > 50 || answ3 == null) {
+    answ3 = prompt('Какой фильм 2', 'sec')
+    answ4 = prompt('Оценка 2', '8')
+}
+
+personalMovieDB.movies[answ[1]] = answ[2];
+personalMovieDB.movies[answ[3] = answ[4];
+
+*/
+
+/*
+let answ = [];
+
+for (let i = 1; i < 5; i++) {
+    if (i % 2 != 0) {
+        while (answ[i] == '' || answ[i] == null || answ[i] > 50) {
+            answ[i] = prompt('Какой фильм ' + i, 'first');                  // вариант 3
+        }
+    } else  {
+        while (answ[i] == '' || answ[i] == null) {
+            answ[i] = prompt('Оценка ' + i, '5');
+        }
+    }
+    if (i % 2 == 0) {
+        personalMovieDB.movies[answ[i - 1]] = answ[i];
+    }
+}
+
+console.log(personalMovieDB);
+
+*/
+
+
+//*********************************************** 016 Функции, стрелочные ф-ции (ES6)
+/*
+function showMess() {
+    console.log("Hello func");
+}
+
+showMess();
+
+
+function showText(text) {
+    console.log(text);
+}
+
+showText("Jonnnn");
+
+
+function showText(text) {
+    console.log(text);
+    let num = 20;           // локальная переменная
+                            // существует только внутри функции
+
+}
+
+showText("Jonnnn");
+console.log(num);
+
+*/
+
+/* let num = 20;                // глобальная переменная
+
+function showText(text) {
+    console.log(text);
+    num = num + 3;           // глобальная переменная
+    //let num = 5;             // локальная переменная
+    console.log(num);
+
+}
+showText("Jonnnn");
+console.log(num);
+
+function calc(a, b) {
+    return (a + b);         //возвращает значение, останавливает функцию
+}
+
+console.log(calc(3, 5));
+console.log(calc(30, 50));
+
+console.log('-------------------------------------------------------');
+
+function ret() {
+    let num=43;
+    return num;
+}
+
+const secondNum = ret();
+
+console.log(secondNum);
+
+console.log('-------------------------------------------------------');
+
+const logger = function () {        // иожно вызвать только после объявления
+console.log("Expression");
+};
+
+logger();
+
+console.log('-------------------------------------------------------');
+
+//const calc = (a, b) => a + b;           // стрелочные функции
+const calc3 = (a, b) => {
+    console.log('1');
+    return a + b
+};                                        // стрелочные функции
+
+calc3 (3,8);
+*/
+
+//*********************************************** 017 Методы и свойства строк и чисел
+/*
+const str = 'tEst';
+
+console.log (str.length);
+
+const arr = ['asd', 3, 234];
+
+console.log(arr.length);
+
+console.log(str[2]);
+
+console.log(str);
+
+console.log(str.toUpperCase());
+
+console.log(str.toLowerCase());
+
+console.log("-------------------------------------------------------");
+
+const fruits = "Some fruits";
+
+console.log(fruits.indexOf("fruit"));  // поиск по подстроке
+console.log(fruits.indexOf("f"));
+console.log(fruits.indexOf("u"));
+
+console.log("-------------------------------------------------------");
+
+const logg = "Hello world";             // поиск по подстроке
+
+console.log(logg);
+
+console.log(logg.slice(6,10));
+
+console.log(logg.slice(6));
+
+console.log(logg.slice(6));
+
+console.log(logg.slice(-5));
+
+console.log("-------------------------------------------------------");
+
+console.log(logg.substring(8));         // поиск по подстроке
+
+console.log("-------------------------------------------------------");
+
+console.log(logg.substr(6, 4)); // поиск по подстроке
+
+console.log("-------------------------------------------------------");
+
+const num = 12.2;
+console.log(Math.round(num));      // округление
+
+console.log("-------------------------------------------------------");
+
+const test = "18.2px";
+console.log(parseInt(test));
+console.log(parseFloat(test));
+
+*/
