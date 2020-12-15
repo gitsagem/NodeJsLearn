@@ -405,7 +405,7 @@ console.log(secondNum);
 
 console.log('-------------------------------------------------------');
 
-const logger = function () {        // иожно вызвать только после объявления
+const logger = function () {        // можно вызвать только после объявления
 console.log("Expression");
 };
 
@@ -485,34 +485,69 @@ console.log(parseFloat(test));
 
 //*********************************************** 018 Практика , ч3. Используем функции
 
-let numberOfFilms;
+let numbersOfFilms;
+
+
 
 function start() {
-    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+    numbersOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+    while (numbersOfFilms == '' || numbersOfFilms == null || isNaN(numbersOfFilms)) {
+        numbersOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
     }
 }
 
-start();
+/*start();*/
 
 const personalMovieDB = {
-    count: numberOfFilms,
+    count: numbersOfFilms,
     movies: {},
     actors: {},
     genres: [],
     privat: false
 };
 
-for (let i; i < 2; i++) {
-    const a = prompt("Какой фильм вы недавно посмотрели", ""),
-          b = prompt("Оценка фильма", "");
-    if (a != null && b != null && a != "" && b != "" && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log("Done");
-    } else {
-        i--;
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt("Какой фильм вы недавно посмотрели", ""),
+            b = prompt("Оценка фильма", "");
+        if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log("Done");
+        } else {
+            i--;
+        }
     }
 }
 
-console.log(personalMovieDB);
+/*rememberMyFilms();*/
+
+function detectPersonalLevel() {
+    if (numbersOfFilms >= 0 && numbersOfFilms < 10) {
+        console.log('Мало');
+    } else if (numbersOfFilms >= 10 && numbersOfFilms < 30) {
+        console.log('Средне');
+    } else {
+        console.log('Много');
+    }
+}
+
+/*detectPersonalLevel();*/
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i-1] = prompt(`Ваш любимый жанр под номером ${i}`, "");
+    }
+}
+
+writeYourGenres();
+
+showMyDB(personalMovieDB.privat);
+
+
+
