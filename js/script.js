@@ -482,3 +482,37 @@ console.log(parseInt(test));
 console.log(parseFloat(test));
 
 */
+
+//*********************************************** 018 Практика , ч3. Используем функции
+
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+    }
+}
+
+start();
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+for (let i; i < 2; i++) {
+    const a = prompt("Какой фильм вы недавно посмотрели", ""),
+          b = prompt("Оценка фильма", "");
+    if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log("Done");
+    } else {
+        i--;
+    }
+}
+
+console.log(personalMovieDB);
