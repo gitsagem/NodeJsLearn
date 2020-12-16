@@ -484,7 +484,7 @@ console.log(parseFloat(test));
 */
 
 //*********************************************** 018 Практика , ч3. Используем функции
-
+/*
 let numbersOfFilms;
 
 
@@ -496,7 +496,7 @@ function start() {
     }
 }
 
-/*start();*/
+/*start();
 
 const personalMovieDB = {
     count: numbersOfFilms,
@@ -519,7 +519,7 @@ function rememberMyFilms() {
     }
 }
 
-/*rememberMyFilms();*/
+/*rememberMyFilms();
 
 function detectPersonalLevel() {
     if (numbersOfFilms >= 0 && numbersOfFilms < 10) {
@@ -531,7 +531,7 @@ function detectPersonalLevel() {
     }
 }
 
-/*detectPersonalLevel();*/
+/*detectPersonalLevel();
 
 function showMyDB(hidden) {
     if (!hidden) {
@@ -549,5 +549,308 @@ writeYourGenres();
 
 showMyDB(personalMovieDB.privat);
 
+*/
+
+//*********************************************** 019 Callback- функции
+
+/*
+function first() {
+    setTimeout(function () {
+        console.log('first');
+    }, 500);
+}
+
+function second() {
+    console.log('second');
+}
+
+first();
+second();
+
+console.log("-------------------------------------------------------");
+
+function learnJS(lang, callback) {
+    console.log(`test ${lang}`);            // сначала выполняется тело функции
+    callback();                             // потом то, что указано в callback
+}
+
+function done() {
+    console.log('прошел');
+}
+
+learnJS('text', done());
+
+*/
+
+//*********************************************** 020 Объекты, методы, деструктуризация объектов (ES6)
+/*
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bd: 'red'
+    },
+    makeTest: function () {
+        console.log('Test_test');
+    }
+};
+
+//console.log(options.width);
+
+//delete options.name;
+
+//console.log(options);
+
+console.log("-------------------------------------------------------");
+
+let counter = 0;
+
+for (let key in options) {          // перебор объекта
+    if (typeof(options[key]) === 'object') {
+        for (let k2 in options[key]) {
+            console.log(`Свойство ${k2} имеет значение ${options[key][k2]}`);
+            counter++;
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`);
+        counter++;
+    }
+}
+
+console.log(counter);
+
+console.log("-------------------------------------------------------");
+
+console.log(Object.keys(options));
+
+console.log(Object.keys(options).length);           // подсчет количества свойств в объекте
+
+options.makeTest();
+
+const {border, bg} = options.colors;                // деструктуризация
+
+console.log(border);
+
+*/
+
+//*********************************************** 021 Массивы и псевдомассивы
+/*
+const arr = [1, 2, 3, 6, 10];
+
+arr.pop();          // удаление последнего элемента
+arr.push(15);       // добавление элемент в конец
+
+console.log(arr);
+
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
+
+console.log("-------------------------------------------------------");
+
+for (let value of arr) {
+    console.log(value);
+}
+
+arr[99] = '0';
+
+console.log(arr.length);
+
+console.log(arr);
+
+console.log("-------------------------------------------------------");
+
+arr.forEach(function (item, i, arr) {
+    console.log(`${i}: ${item} внутри массива ${arr}`);
+})
+*/
+/*
+arr.forEach(function callback(currentValue, index, array) {
+    //your iterator
+}[, thisArg]);
+*/
+/*
+console.log("-------------------------------------------------------");
+
+const str = 'один,два,три,четыре';
+//const str = prompt("products", '');
+const arr2 = str.split(",");
+console.log(arr2);
+
+const newStr = arr2.join('; ' );
+console.log(newStr);
+
+console.log("-------------------------------------------------------");
+
+arr2.sort();
+
+console.log(arr2);
+
+arr2.sort();
+
+console.log("-------------------------------------------------------");
+
+const arr3 = [1, 45, 7, 14, 78, 3]
+
+arr3.sort();
+
+arr3.sort(compareNum);              // сортировка массива с числами
+
+function compareNum(a, b) {
+    return a - b;
+}
+
+console.log(arr3);
+ */
+
+//*********************************************** 022 Передача по ссылке или по значению, Spread оператор (ES6-ES9)
+/*
+let a = 5,
+    b = a;
+
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+const obj = {
+    a: 5,
+    b: 1
+}
+
+const copy = obj;                           // передача по ссылке
+
+copy.a = 10
+
+console.log(copy);
+console.log(obj);
+
+function copyC(mainObj) {                   // копирование объекта
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
+
+const number = {
+    a: 1,
+    b: 2,
+    c: {
+        x: 3,
+        y: 4
+    }
+};
+
+const newNumbers = copyC(number);
+
+console.log("-------------------------------------------------------");
+
+console.log(newNumbers);
+
+console.log("-------------------------------------------------------");
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+const addObj = (Object.assign(number, add));        // добавление к объекту
+
+const newObj = (Object.assign({}, add));      // глубокое клонирование объекта
+
+console.log(newObj);
+
+console.log("-------------------------------------------------------");
+
+const oldArr = ['a', 'b', 'c'];
+const newArr = oldArr.slice();
+newArr[1] = 'asdasd';
+console.log(newArr);
+console.log(oldArr);
+
+console.log("-------------------------------------------------------");
+
+const arrVideo = ['youtube', 'vimeo', 'rutube'],
+      arrBlogs = ['wordpress', 'drupal'],
+      arrInternet = [...arrVideo, ...arrBlogs, 'one', 'two'];
+
+console.log(arrInternet);
+
+console.log("-------------------------------------------------------");
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 5, 7];
+
+log(...num);
+
+const array = [
+    'a', 'b'
+];
+
+const newArray = [...array];  // тоже копирование объектов и массивов
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newQ = {...q};
+
+console.log(newQ);
+console.log(newArray);
+
+console.log("-------------------------------------------------------");
+
+newQ.one = 3;
+
+console.log(q);
+console.log(newQ);
+
+
+*/
+
+
+//*********************************************** 023 Основы ООП, прототипно-ориентированное наследование
+
+let str = "some";
+let strObj = new String(str);
+/*
+console.log(typeof (str));
+console.log(typeof (strObj));
+*/
+//console.dir([1,2,3]);
+
+const solder = {
+    health: 440,
+    armor: 60,
+    sayHello: function () {
+        console.log("Helllo");
+    }
+};
+
+const john = {
+    health: 100
+};
+
+//john.__proto__ = solder;
+
+Object.setPrototypeOf(john, solder);
+
+const john2 = Object.create(solder);
+
+
+//console.log(john.armor);
+//john.sayHello();
+
+john2.sayHello();
 
 
