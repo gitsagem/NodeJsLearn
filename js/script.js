@@ -820,13 +820,13 @@ console.log(newQ);
 
 
 //*********************************************** 023 Основы ООП, прототипно-ориентированное наследование
-
+/*
 let str = "some";
 let strObj = new String(str);
 /*
 console.log(typeof (str));
 console.log(typeof (strObj));
-*/
+
 //console.dir([1,2,3]);
 
 const solder = {
@@ -853,4 +853,135 @@ const john2 = Object.create(solder);
 
 john2.sayHello();
 
+*/
+//*********************************************** 024 Практика , ч4. Используем объекты
+
+
+let numbersOfFilms;
+
+/*function start() {
+    //numbersOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+    while (numbersOfFilms == '' || numbersOfFilms == null || isNaN(numbersOfFilms)) {
+        numbersOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+    }
+}
+
+start();
+*/
+const personalMovieDB = {
+    count: numbersOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    start: function () {
+        while (numbersOfFilms == '' || numbersOfFilms == null || isNaN(numbersOfFilms)) {
+            numbersOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+        }
+    },
+    rememberMyFilms: function () {
+        for (let i = 0; i < 2; i++) {
+            const a = prompt("Какой фильм вы недавно посмотрели", ""),
+                  b = prompt("Оценка фильма", "");
+            if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+                personalMovieDB.movies[a] = b;
+                console.log("Done");
+            } else {
+                i--;
+            }
+        }
+    },
+    detectPersonalLevel: function () {
+        if (numbersOfFilms >= 0 && numbersOfFilms < 10) {
+            console.log('Мало');
+        } else if (numbersOfFilms >= 10 && numbersOfFilms < 30) {
+            console.log('Средне');
+        } else {
+            console.log('Много');
+        }
+    },
+    showMyDB: function (hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+    writeYourGenres: function () {
+        for (let i = 1; i <= 3; i++) {
+            let a = prompt(`Ваш любимый жанр под номером ${i}`, "");
+            if (a != null && a != "") {
+                personalMovieDB.genres[i - 1] = a;
+            } else {
+                i--;
+            }
+
+            if (i === 3) {
+                for (let k = 1; k <= 3; k++) {
+                    console.log(`Жанр #${k} это ${personalMovieDB.genres[k - 1]}`);
+                }
+            }
+        }
+    },
+    toggleVisibleMyDB: function () {
+        if (personalMovieDB.privat === false) {
+            personalMovieDB.privat = true;
+        } else {
+            personalMovieDB.privat = false;
+        }
+    }
+
+};
+
+personalMovieDB.writeYourGenres();
+
+/*
+console.log(personalMovieDB.privat);
+
+personalMovieDB.toggleVisibleMyDB();
+
+console.log(personalMovieDB.privat);
+*/
+
+/*function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt("Какой фильм вы недавно посмотрели", ""),
+            b = prompt("Оценка фильма", "");
+        if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log("Done");
+        } else {
+            i--;
+        }
+    }
+}*/
+
+/*rememberMyFilms();*/
+/*
+function detectPersonalLevel() {
+    if (numbersOfFilms >= 0 && numbersOfFilms < 10) {
+        console.log('Мало');
+    } else if (numbersOfFilms >= 10 && numbersOfFilms < 30) {
+        console.log('Средне');
+    } else {
+        console.log('Много');
+    }
+}
+
+detectPersonalLevel();
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i-1] = prompt(`Ваш любимый жанр под номером ${i}`, "");
+    }
+}
+
+writeYourGenres();
+
+showMyDB(personalMovieDB.privat);
+
+*/
 
