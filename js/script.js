@@ -863,7 +863,7 @@ john2.sayHello();
 */
 //*********************************************** 024 Практика , ч4. Используем объекты
 
-
+/*
 
 const personalMovieDB = {
     count: 0,
@@ -924,17 +924,126 @@ const personalMovieDB = {
             personalMovieDB.privat = true;
         }
     }
-
 };
+*/
+
+//***********************************************   025 Отлавливаем ошибки в своем коде при помощи консоли разработчика. Breakpoints
+/*
+
+alert ('123');
+const result = confirm("ready?")
+console.log (result);                 //true-false
 
 
 
+const answer = prompt("Вам есть 18?", "да"); // строка
+console.log (typeof (answer));
+*/
+
+//***********************************************   026 Динамическая типизация в JS
+/*
+// To string
+
+// 1)
+console.log(typeof(String(5)));
+console.log(typeof(String(null)));
+
+// 2)
+console.log(typeof(String(5 + '')));
+
+const num = 7;
+
+console.log("https://vk.com/catalog/" + num);
+
+const fontsize = 26 + 'px';
+
+// To Number
+
+// 1)
+console.log(typeof(Number('5')));
+
+// 2)
+console.log((typeof (+'5')));
+
+// 3)
+console.log(typeof (parseInt("15px", 10)));
+
+//let answ = +prompt("Hello", "");
+
+// To Boolean
+
+// False: 0, '', null, undefined, NaN;
+// True: всё остальное
+
+// 1
+let switcher = null;
+
+if (switcher) {
+    console.log('Working');
+}
+
+switcher = 1;
+
+if (switcher) {
+    console.log('Working');
+}
+
+// 2
+
+console.log(typeof(!!"fa"));
+
+// 3
+*/
+
+//*********************************************** 027 Задачи с собеседований на понимание основ
 
 
+/*•	Какое будет выведено значение:
+
+    let x = 5; alert( x++ ); ?
+•	5 (сначала выводит, потом считает)
+
+•	Чему равно такое выражение: [ ] + false - null + true ?
+•	NaN, из-за отнимания нематематических операций с null
+
+•	Что выведет этот код: let y = 1; let x = y = 2; alert(x); ?
+•	2
+
+•	Чему равна сумма [ ] + 1 + 2?
+    12
+•	Что выведет этот код: alert( "1"[0] )?
+•	1, становится массивом, т. к. объект
+
+•	Чему равно 2 && 1 && null && 0 && undefined ?
+•	null, т.к есть null
+
+•	Есть ли разница между выражениями? !!( a && b ) и (a && b)?
+•	да, разный тип данных
+
+•	Что выведет этот код: alert( null || 2 && 3 || 4 ); ?
+•	3, останавливается на null
+
+•	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?
+•	нет, массивы и объекты не сравниваются
+
+•	Что выведет этот код: alert( +"Infinity" ); ?
+•	Infinity - изначально числовое значение - бесконечность
+
+•	Верно ли сравнение: "Ёжик" > "яблоко"?
+•	Нет, объекты
+
+•	Чему равно 0 || "" || 2 || undefined || true || falsе ?
+•	2
+
+console.log(2 && 3);
+
+console.log( null || 2 && 3 || 4 );
+
+console.log( +"Infinity" );
+
+console.log("яблоко" > "яблоко");
+
+console.log(0 || "" || 2 || undefined || true || falsе);
 
 
-
-
-
-
-
+ */
